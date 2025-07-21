@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    background-color: #d1d1d1;
+    display: flex;
+    flex-direction: column; /* <-- isso alinha em coluna */
+    min-height: 100vh;
+    align-content: center;
+}
+header {
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    background-color: #4b0082;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+}
+ #logo-container{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+ }
+ #logo {
+    padding-left: 30px;
+    width: 50px;
+    margin-right: 2px;
+}
+
+#nome {
+    padding-top: 10px;
+    font-family: 'unicode';
+    font-size: 25px;
+    font-weight: bold;
+}
+h1 {
+    padding-inline: 20%;
+    margin: 0;
+    font-family: 'unicode';
+    font-size: 35px;
+    text-align: center;
+}
+section {
+    display: flex;
+    flex: 1;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+footer {
+    margin-top: auto;
+    text-align: center;
+    padding: 10px;
+    background-color: #36005f;
+    color: white;
+}

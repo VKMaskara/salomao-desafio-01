@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>GASTOS</title>
+</head>
+<body>
+    <header>
+        <div id="logo-container"> 
+            <img id="logo" src="img/logo.png" alt="Logo" >
+            <p id="nome">Salomão</p>
+        </div>
+        
+        <h1>CENTRAL DE GASTOS:</h1>
+    </header>
+    <br>
+    <section>   
+        <div>
+            <form>
+                <label for="descricao">Descrição:</label>
+                <input type="text" id="descricao" placeholder="Digite a descrição"><br><br>
+
+                <label for="valor">Valor:</label>
+                <input type="number" id="valor" placeholder="Digite o valor"><br><br>
+
+                <button type="button" id="btn" onclick="adicionarGasto()">Adicionar Gasto</button>
+            </form>
+        </div>
+        <br>
+        <div id="gastos">
+           
+        </div>
+         <p id="total">Total: R$ 0,00</p>
+    </section>
+    <br>
+    <footer>
+        <p>&copy; O Kauê é FODA!</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
