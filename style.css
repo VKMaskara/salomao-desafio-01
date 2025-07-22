@@ -60,3 +60,16 @@ footer {
     background-color: #36005f;
     color: white;
 }
+.card-opcao {
+    /* seus estilos atuais */
+    border: none;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.card-opcao.ativo {
+    opacity: 1;
+    transform: scale(1.05);
+    background-color: #d4af37;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="icon.css">
     <title>GASTOS</title>
 </head>
 <body>
@@ -13,12 +14,43 @@
             <p id="nome">Salomão</p>
         </div>
         
-        <h1>CENTRAL DE GASTOS:</h1>
+       
     </header>
     <br>
     <section>   
+
+         <div class="opcoes-conteudo">
+
+            <button class="card-opcao ativo" onclick="selecionarOpcao(this,'geral')">
+                <i class="fi fi-rr-bank"></i>
+                <p>Geral</p>
+            </button>
+            <button class="card-opcao" onclick="selecionarOpcao(this, 'entrada')">
+                <i class="fi fi-tr-money-bills-simple"></i>
+                <p>Entrada</p>
+            </button>
+             <button class="card-opcao" onclick="selecionarOpcao(this, 'saida')">
+                <i class="fi fi-ss-earnings"></i>
+                <p>Saída</p>
+            </button>
+             <button class="card-opcao" onclick="selecionarOpcao(this, 'carteira')">
+                <i class="fi fi-rs-wallet"></i>
+                <p>Carteira</p>
+            </button>
+
+            
+         </div>
+
         <div>
-            <form>
+
+            <div class="conteudo">
+                <h2 id="titulo-conteudo">Visão Geral</h2>
+                <div class="conteudo-dinamico" id="conteudo-opcao">
+                    <!-- Conteúdo será carregado dinamicamente -->
+                <p>Selecione uma das opções acima para visualizar os dados.</p>
+            </div>
+            
+            <!--<form>
                 <label for="descricao">Descrição:</label>
                 <input type="text" id="descricao" placeholder="Digite a descrição"><br><br>
 
@@ -26,18 +58,17 @@
                 <input type="number" id="valor" placeholder="Digite o valor"><br><br>
 
                 <button type="button" id="btn" onclick="adicionarGasto()">Adicionar Gasto</button>
-            </form>
+            </form>-->
         </div>
-        <br>
-        <div id="gastos">
-           
-        </div>
-         <p id="total">Total: R$ 0,00</p>
+        
+    
     </section>
     <br>
     <footer>
         <p>&copy; O Kauê é FODA!</p>
+        <input type="number" name="" id="">
     </footer>
     <script src="script.js"></script>
+    <script src="teste.js"></script>
 </body>
 </html>
