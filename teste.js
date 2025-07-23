@@ -43,3 +43,32 @@ function selecionarOpcao(elemento, tipo){
    conteudoInterativo.innerHTML = conteudos[tipo].conteudo
 }
 
+let lancamentos = {
+    entrada:{
+        titulo: "Lançamento: Entrada",
+        conteudo:``,
+    },
+    saida:{
+        titulo: "Lançamento: Saída"
+    },
+    ativos:{
+        titulo: "Lançamento: Ativos"
+    }
+}
+function selecaoLance(elemento, tipo){
+    let tipolan = document.querySelectorAll('.escolha-lance')
+    tipolan.forEach(botao =>{
+        botao.classList.remove('ativo');
+    });
+
+    //adicionar 'ativo' no botão clicado
+    elemento.classList.add('ativo');
+
+    let titulolance = document.getElementById('titulo-lance')
+    let  conteudolance = document.getElementById('lance-opcao')
+
+    titulolance.textContent = lancamentos[tipo].titulo;
+    conteudolance.innerHTML = lancamentos[tipo].conteudo;
+
+
+}
