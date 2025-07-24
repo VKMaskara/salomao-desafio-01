@@ -70,24 +70,54 @@
     </section>
      <div id="modal-overlay" class="modal-overlay hidden">
         <div class="tipo-lan"> 
-            <button class="escolha-lance ativo" onclick="selecaoLance(this, 'entrada')">
-                <i class="fi fi-tr-money-bills-simple"></i>&nbsp;
-                <p>Entrada</p>
-            </button>
-            <button class="escolha-lance" onclick="selecaoLance(this, 'saida')">
-                <i class="fi fi-ss-earnings"></i>&nbsp;
-                <p>Saída</p>
-            </button>
-            <button class="escolha-lance" onclick="selecaoLance(this, 'ativos')">
-                <i class="fi fi-rs-wallet"></i>&nbsp;
-                <p>Ativos</p>
-            </button>
+            <div class="selecao">
+                <button class="escolha-lance ativo" onclick="selecaoLance(this, 'entrada')">
+                    <i class="fi fi-tr-money-bills-simple"></i>&nbsp;
+                    <p>Entrada</p>
+                </button>
+                <button class="escolha-lance" onclick="selecaoLance(this, 'saida')">
+                    <i class="fi fi-ss-earnings"></i>&nbsp;
+                    <p>Saída</p>
+                </button>
+                <button class="escolha-lance" onclick="selecaoLance(this, 'ativos')">
+                    <i class="fi fi-rs-wallet"></i>&nbsp;
+                    <p>Ativos</p>
+                </button>
+            </div>
             
-        </div>
-        <div class="lance">
-            <h3 id="titulo-lance">Seu lançamento</h3>
-            <div class="lance-dinamico" id="lance-opcao">
-                  <p>Selecione uma das opções acima para visualizar os dados.</p>
+        
+            <div class="lance" >
+                <h3 id="titulo-lance">Seu lançamento</h3>
+
+                <div class="lance-dinamico" id="lance-opcao">
+                    <label>Descrição:</label>
+                    <input type="text" class="nv-lance" name="descript" id="descricao">
+                        <br><br>
+                    <label>valor:</label>
+                    <input type="number" class="nv-lance" name="nvalue" id="value">
+                        &nbsp;&nbsp;&nbsp;
+                    <label>Data:</label>
+                    <input type="date" class="nv-lance" name="calendario" id="data">
+
+                    <br><br>
+
+                    <label>Forma de pagamento:</label>
+                    <select class="nv-lance" >
+                        <option value="" aria-placeholder="Selecione:">Selecione</option>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Cartão">Cartão</option>
+                        <option value="Pix">Pix</option>
+                        <option value="Transferência">Transferência</option>
+                        <option value="Boleto">Boleto Bancário</option>
+                    </select>
+                </div>
+
+                <br><br><br>
+
+                <div class="modal-actions">
+                    <button onclick="fecharModal()">Cancelar</button>
+                    <button onclick="salvarGasto()">Salvar</button>
+                </div>
             </div>
         </div>
      </div>

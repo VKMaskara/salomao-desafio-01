@@ -46,7 +46,7 @@ function selecionarOpcao(elemento, tipo){
 let lancamentos = {
     entrada:{
         titulo: "Lançamento: Entrada",
-        conteudo:``,
+    
     },
     saida:{
         titulo: "Lançamento: Saída"
@@ -68,7 +68,35 @@ function selecaoLance(elemento, tipo){
     let  conteudolance = document.getElementById('lance-opcao')
 
     titulolance.textContent = lancamentos[tipo].titulo;
-    conteudolance.innerHTML = lancamentos[tipo].conteudo;
-
-
 }
+
+function adicionarAtivo() {
+    document.getElementById("modal-overlay").classList.remove("hidden");
+}
+
+function fecharModal(){
+    document.getElementById("modal-overlay").classList.add("hidden")
+}
+
+function salvarGasto(){
+ 
+    //criar os alertas sobre os dados
+    let descricao = document.getElementById('descricao').value.trim();
+    let valor = document.getElementById('value').value.trim();
+    let data = document.getElementById('data') ? document.getElementById('data').value.trim() : '';
+
+    if (!descricao || !valor || isNaN(Number(valor)) || !data) {
+        window.alert('Preencha todos os campos corretamente!');
+        return;
+    }
+  
+    //passando pela validação
+    window.alert('Gasto salvo com Sucesso!')
+
+   
+    fecharModal()
+
+   
+}
+ 
+    
