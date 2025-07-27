@@ -52,7 +52,7 @@
                 <h2 id="titulo-conteudo">Visão Geral</h2>
                 <div class="conteudo-dinamico" id="conteudo-opcao">
                     <!-- Conteúdo será carregado dinamicamente -->
-                <p>Selecione uma das opções acima para visualizar os dados.</p>
+                </div>
             </div>
             
             <!--<form>
@@ -102,7 +102,7 @@
                     <br><br>
 
                     <label>Forma de pagamento:</label>
-                    <select class="nv-lance" >
+                    <select class="nv-lance" id="meio">
                         <option value="" aria-placeholder="Selecione:">Selecione</option>
                         <option value="Dinheiro">Dinheiro</option>
                         <option value="Cartão">Cartão</option>
@@ -116,7 +116,7 @@
 
                 <div class="modal-actions">
                     <button onclick="fecharModal()">Cancelar</button>
-                    <button onclick="salvarGasto()">Salvar</button>
+                    <button onclick="salvarLance()">Salvar</button>
                 </div>
             </div>
         </div>
