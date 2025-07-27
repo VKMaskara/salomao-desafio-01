@@ -200,3 +200,39 @@ footer {
 .hidden {
   display: none;
 }
+.lances_b {
+    margin: 0 auto;
+    display: table;
+    width: 80%; /* ajuste conforme necessário */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid #ccc; /* borda externa */
+}
+
+.lances_b thead {
+    background-color: #4b0082;
+    color: #fff;
+    text-align: center;
+}
+
+.lances_b th, .lances_b td {
+    padding: 12px 16px;
+    text-align: center;
+    border-bottom: 1px solid #ccc; /* borda horizontal */
+    border-right: 1px solid black;  /* borda vertical */
+}
+
+.lances_b th:last-child, .lances_b td:last-child {
+    border-right: none; /* remove borda da última coluna */
+}
+
+.lances_b tbody tr:last-child td {
+    border-bottom: none; /* remove borda da última linha */
+}
+
+.lances_btbody tr:nth-child(even) {
+    background-color: #f6f6f6;
+}

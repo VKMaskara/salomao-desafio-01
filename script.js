@@ -29,6 +29,3 @@ function adicionarGasto() {
     document.getElementById("total").innerText = `Total: R$ ${soma.toFixed(2)}`;
 
 }
-
-
-

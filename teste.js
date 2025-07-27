@@ -1,32 +1,60 @@
 let conteudos = {
- geral: {
-    titulo: "Visão geral",
- },
- entrada: {
-  titulo: "Entrada",
- },
- saida: {
-    titulo: "Saida",
-},
- carteira: {
-    titulo: "Carteira",
- }
-}
-function selecionarOpcao(elemento, tipo){
-    let opcao = document.querySelectorAll('.card-opcao').forEach(botao => {
+    geral: {
+        titulo: "Visão geral",
+    },
+    entrada: {
+        titulo: "Entrada",
+    },
+    saida: {
+        titulo: "Saída",
+    },
+    carteira: {
+        titulo: "Carteira",
+    }
+};
+
+function selecionarOpcao(elemento, tipo) {
+    let opcoes = document.querySelectorAll('.card-opcao');
+    opcoes.forEach(botao => {
         botao.classList.remove('ativo');
     });
 
-    //adicionar 'ativo' no botão clicado
+    // Adiciona 'ativo' no botão clicado
     elemento.classList.add('ativo');
 
-     // 3. Atualiza o título na página
-   let textoInterativo = document.getElementById('titulo-conteudo');
-  
+    // Atualiza o título na página
+    let textoInterativo = document.getElementById('titulo-conteudo');
+    textoInterativo.textContent = conteudos[tipo].titulo;
 
+    // Filtra os lances conforme o tipo selecionado
+    filtrarLances(tipo);
+}
 
-   textoInterativo.textContent = conteudos[tipo].titulo;
+function filtrarLances(tipo) {
+    let tbody = document.getElementById('lances-tbody');
+    if (!tbody) return;
 
+    tbody.innerHTML = '';
+
+    let lancesFiltrados;
+    if (tipo === 'geral') {
+        lancesFiltrados = lances;
+    } else {
+        lancesFiltrados = lances.filter(item => item[3] === tipo);
+    }
+
+    lancesFiltrados.forEach(item => {
+        let [descricao, valor, data, tipoLance, meio] = item;
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${tipoLance}</td>
+            <td>${descricao}</td>
+            <td>${valor}</td>
+            <td>${data}</td>
+            <td>${meio}</td>
+        `;
+        tbody.appendChild(row);
+    });
 }
 
 let lancamentos = {
@@ -121,30 +149,32 @@ function salvarLance(){
 
 function atualizarLances() {
     let lista = document.getElementById('conteudo-opcao');
-    lista.innerHTML = ''; // limpa antes de renderizar
+    lista.innerHTML = `
+        <table class="lances_b">
+            <thead>
+                <tr>
+                    <th>LANCE</th>
+                    <th>DESCRIÇÃO</th>
+                    <th>VALOR</th>
+                    <th>DATA</th>
+                    <th>MEIO</th>
+                </tr>
+            </thead>
+            <tbody id="lances-tbody"></tbody>
+        </table>
+    `;
 
-    lances.forEach((item, index) => {
-        let [descricao, valor, data] = item;
-
-        lista.innerHTML += `
-            <div class="lance">
-                <table class="lances_b">
-                    <tr>
-                        <th>LANCE<th>
-                        <th>DESCRIÇÃO<th>
-                        <th>VALOR<th>
-                        <th>DATA<th>
-                        <th>MEIO<th>
-                    <tr>
-                    <tr>
-                       <td>${tipoLanceSelecionado}<td>
-                       <td>${descricao}<td>
-                       <td>${valor}<td>
-                       <td>${data}<td>
-                       <td>${meio}<td>
-                    <tr>
-                </table> 
-            </div>
+    let tbody = document.getElementById('lances-tbody');
+    lances.forEach((item) => {
+        let [descricao, valor, data, tipo, meio] = item;
+        let row = document.createElement('tr');
+        row.innerHTML = `
+            <td>${tipo}</td>
+            <td>${descricao}</td>
+            <td>${valor}</td>
+            <td>${data}</td>
+            <td>${meio}</td>
         `;
+        tbody.appendChild(row);
     });
 }
